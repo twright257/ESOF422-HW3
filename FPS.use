@@ -1,0 +1,138 @@
+--fps in class exercise
+
+model FPS
+/*
+ * State pattern interface
+ */
+abstract class FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+	end
+	
+/*
+ * class for fps player
+ */
+class Player
+	attributes
+		health : Integer init : 100
+		defeatable : Boolean 
+		fpsState : FPSState
+		neutralState : FPSState
+		attackState : FPSState
+		panicState : FPSState
+		dieState : FPSState
+	
+	operations
+		initInstance()
+		begin
+			self.neutralState := new Neutral; 
+			self.attackState := new Attack;
+			self.panicState := new Panic;
+			self.dieState := new Die;
+			self.fpsState := self.neutralState; 
+			insert (self.neutralState, self) into playerState; 
+			insert (self.attackState, self) into playerState; 
+			insert (self.panicState, self) into playerState; 
+			insert (self.dieState, self) into playerState; 
+		end
+		
+		seeOponent(p : Player)
+		begin
+			self.fpsState.seeOpponent(p); 
+		end
+		
+		lostOpponent()
+		begin
+			self.fpsState.lostOpponent(); 
+		end
+		
+		receiveBlow()
+		begin
+			self.fpsState.receiveBlow(); 
+		end
+
+end	
+
+/*
+ *State classes
+ */
+class Neutral < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+			if (p.defeatable = true) then
+				self.player.fpsState := self.player.attackState 
+			else
+				self.player.fpsState := self.player.panicState
+			end; 
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+end
+
+class Attack < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+end
+
+class Die < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+end
+
+class Panic < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+end
+
+--associations
+association playerState between
+	FPSState[1]
+	Player[1]
+end
