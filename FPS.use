@@ -46,7 +46,7 @@ class Player
 			insert (self.dieState, self) into playerState; 
 		end
 		
-		seeOponent(p : Player)
+		seeOpponent(p : Player)
 		begin
 			self.fpsState.seeOpponent(p); 
 		end
@@ -94,10 +94,15 @@ class Attack < FPSState
 		
 		lostOpponent()
 		begin
+			self.player.fpsState := self.player.neutralState; 
 		end
 		
 		receiveBlow()
 		begin
+			self.player.health := self.player.health - 50; 
+			if (self.player.health <= 0) then 
+				self.player.fpsState := self.player.dieState;
+			end; 
 		end
 end
 
@@ -124,10 +129,15 @@ class Panic < FPSState
 		
 		lostOpponent()
 		begin
+			self.player.fpsState := self.player.neutralState; 
 		end
 		
 		receiveBlow()
 		begin
+			self.player.health := self.player.health - 50; 
+			if (self.player.health <= 0) then 
+				self.player.fpsState := self.player.dieState;
+			end;
 		end
 end
 
