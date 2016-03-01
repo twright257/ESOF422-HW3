@@ -145,13 +145,13 @@ class Player
  * States not compiling yet!!!!!!!!
  */		
 		
-	Statemachines
+	statemachines
 		psm StatePattern
 			states
 				startUp:initial
+				Panic	[fpsState = panicState]
 				Neutral	[fpsState = neutralState]
 				Attack	[fpsState = attackState]
-				Panic	[fpsState = panicState]
 				Die		[fpsState = dieState]
 			transitions
 				startUp -> Neutral {create}
@@ -168,6 +168,7 @@ class Player
 				startUp:initial
 				Neutral
 				Attack
+				Panic
 				Die [health <= 0]
 			transitions
 				startUp -> Neutral {create} 
