@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>170</y>
+      <w>260</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Classifier Role | AbstractFactory 1..*
+--
+--
+|CreateProduct(): |AbstractProduct</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>220</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>290</y>
+      <w>260</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Class Role | ConcreteClass  1..*
+--
+--
+|CreateProduct(): |ConcreteProduct
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>170</y>
+      <w>280</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Classifier Role | AbstractProduct 1..*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>300</y>
+      <w>260</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Class Role | ConcreteProduct  1..*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>200</y>
+      <w>30</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>170</y>
+      <w>370</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;350.0;20.0</additional_attributes>
+  </element>
+</diagram>
