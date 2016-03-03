@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.3">
+<diagram program="umlet" version="14.1.1">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>170</y>
+      <x>30</x>
+      <y>210</y>
       <w>260</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>Classifier Role | AbstractFactory 1..*
+    <panel_attributes>Classifier Role | AbstractFactory 1..1
 --
 --
 |CreateProduct(): |AbstractProduct</panel_attributes>
@@ -18,8 +18,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>220</y>
+      <x>150</x>
+      <y>260</y>
       <w>30</w>
       <h>90</h>
     </coordinates>
@@ -29,8 +29,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>290</y>
+      <x>30</x>
+      <y>330</y>
       <w>260</w>
       <h>60</h>
     </coordinates>
@@ -45,8 +45,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>170</y>
+      <x>630</x>
+      <y>210</y>
       <w>280</w>
       <h>40</h>
     </coordinates>
@@ -56,8 +56,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>300</y>
+      <x>640</x>
+      <y>340</y>
       <w>260</w>
       <h>40</h>
     </coordinates>
@@ -67,8 +67,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>200</y>
+      <x>760</x>
+      <y>240</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -76,14 +76,36 @@
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>140</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Class Role |Client</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>170</y>
-      <w>370</w>
-      <h>40</h>
+      <x>280</x>
+      <y>160</y>
+      <w>150</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;20.0;350.0;20.0</additional_attributes>
+    <additional_attributes>10.0;50.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>160</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>120.0;50.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
