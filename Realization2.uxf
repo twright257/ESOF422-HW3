@@ -478,4 +478,17 @@ CreateTextBox(): WindowsTextBox</panel_attributes>
 </panel_attributes>
     <additional_attributes>10.0;10.0;120.0;10.0;120.0;320.0;70.0;320.0</additional_attributes>
   </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>469</x>
+      <y>133</y>
+      <w>21</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
 </diagram>

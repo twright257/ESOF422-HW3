@@ -479,4 +479,17 @@ CreateTruck(): DodgeTruck</panel_attributes>
 </panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0;60.0;320.0;40.0;320.0</additional_attributes>
   </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>511</x>
+      <y>112</y>
+      <w>21</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
 </diagram>
