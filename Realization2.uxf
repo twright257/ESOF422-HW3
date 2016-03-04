@@ -34,7 +34,7 @@
       <w>182</w>
       <h>42</h>
     </coordinates>
-    <panel_attributes>Class Role | ConcreteClass  1..*
+    <panel_attributes>Class Role | ConcreteFactory  1..*
 --
 --
 |CreateProduct(): |ConcreteProduct 1..*
@@ -272,7 +272,7 @@ CreateTextBox(): WindowsTextBox</panel_attributes>
       <w>168</w>
       <h>21</h>
     </coordinates>
-    <panel_attributes>Class Role |Client</panel_attributes>
+    <panel_attributes>Class Role |Client 1..1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -490,5 +490,16 @@ CreateTextBox(): WindowsTextBox</panel_attributes>
 
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>14</x>
+      <y>14</y>
+      <w>196</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Realization #2</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
