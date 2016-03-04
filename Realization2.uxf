@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.1.1">
+<diagram program="umlet" version="13.3">
   <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -12,7 +12,7 @@
     <panel_attributes>Classifier Role | AbstractFactory 1..1
 --
 --
-|CreateProduct(): |AbstractProduct</panel_attributes>
+|CreateProduct(): |AbstractProduct 1..*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -37,7 +37,7 @@
     <panel_attributes>Class Role | ConcreteClass  1..*
 --
 --
-|CreateProduct(): |ConcreteProduct 
+|CreateProduct(): |ConcreteProduct 1..*
 
 </panel_attributes>
     <additional_attributes/>
@@ -83,11 +83,11 @@
       <w>182</w>
       <h>49</h>
     </coordinates>
-    <panel_attributes>WindowFactory
+    <panel_attributes>/FormFactory/
 --
 --
-CreateCar(): Car
-CreateTruck(): Truck</panel_attributes>
+CreateButton(): Button
+CreateTextBox(): TextBox</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -98,7 +98,7 @@ CreateTruck(): Truck</panel_attributes>
       <w>182</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>Dodge
+    <panel_attributes>/Button/
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -107,10 +107,10 @@ CreateTruck(): Truck</panel_attributes>
     <coordinates>
       <x>560</x>
       <y>392</y>
-      <w>70</w>
+      <w>98</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>DodgeCar
+    <panel_attributes>WindowsButton
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -119,11 +119,10 @@ CreateTruck(): Truck</panel_attributes>
     <coordinates>
       <x>707</x>
       <y>392</y>
-      <w>70</w>
+      <w>112</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>DodgeTruck
-</panel_attributes>
+    <panel_attributes>LinuxButton</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -156,11 +155,11 @@ CreateTruck(): Truck</panel_attributes>
       <w>203</w>
       <h>56</h>
     </coordinates>
-    <panel_attributes>FordFactory
+    <panel_attributes>LinuxFormFactory
 --
 --
-CreateCar(): Car
-CreateTruck(): Truck</panel_attributes>
+CreateButton(): LinuxButton
+CreateTextBox(): LinuxTextBox</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -171,11 +170,11 @@ CreateTruck(): Truck</panel_attributes>
       <w>182</w>
       <h>56</h>
     </coordinates>
-    <panel_attributes>DodgeFactory
+    <panel_attributes>WindowsFormFactory
 --
 --
-CreateCar(): Car
-CreateTruck(): Truck</panel_attributes>
+CreateButton(): WindowsButton
+CreateTextBox(): WindowsTextBox</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -225,19 +224,6 @@ CreateTruck(): Truck</panel_attributes>
 
 </panel_attributes>
     <additional_attributes>170.0;10.0;10.0;10.0;10.0;210.0;90.0;210.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>329</x>
-      <y>280</y>
-      <w>70</w>
-      <h>224</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;
-
-</panel_attributes>
-    <additional_attributes>60.0;10.0;80.0;10.0;80.0;300.0;10.0;300.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -315,34 +301,34 @@ CreateTruck(): Truck</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>301</y>
+      <y>245</y>
       <w>168</w>
       <h>21</h>
     </coordinates>
-    <panel_attributes>AutomobileManufacture</panel_attributes>
+    <panel_attributes>Form</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>364</x>
-      <y>308</y>
+      <y>259</y>
       <w>42</w>
-      <h>35</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;30.0;40.0;20.0</additional_attributes>
+    <additional_attributes>10.0;100.0;40.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>553</x>
-      <y>315</y>
+      <y>259</y>
       <w>42</w>
-      <h>42</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>40.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>40.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -352,7 +338,7 @@ CreateTruck(): Truck</panel_attributes>
       <w>182</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>Ford</panel_attributes>
+    <panel_attributes>/TextBox/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -360,10 +346,10 @@ CreateTruck(): Truck</panel_attributes>
     <coordinates>
       <x>560</x>
       <y>483</y>
-      <w>70</w>
+      <w>98</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>FordCar
+    <panel_attributes>WindowsTextBox
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -372,10 +358,10 @@ CreateTruck(): Truck</panel_attributes>
     <coordinates>
       <x>714</x>
       <y>483</y>
-      <w>70</w>
+      <w>91</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>FordTruck
+    <panel_attributes>LinuxTextBox
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -412,33 +398,33 @@ CreateTruck(): Truck</panel_attributes>
     <panel_attributes>lt=.&gt;
 
 </panel_attributes>
-    <additional_attributes>10.0;40.0;360.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;80.0;10.0;360.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>308</x>
-      <y>399</y>
-      <w>413</w>
-      <h>49</h>
+      <y>427</y>
+      <w>266</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
 </panel_attributes>
-    <additional_attributes>10.0;50.0;520.0;40.0;570.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0;260.0;100.0;360.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>329</x>
-      <y>490</y>
-      <w>245</w>
-      <h>35</h>
+      <y>399</y>
+      <w>392</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
 </panel_attributes>
-    <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
+    <additional_attributes>10.0;150.0;190.0;40.0;490.0;40.0;490.0;10.0;540.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -452,5 +438,44 @@ CreateTruck(): Truck</panel_attributes>
 
 </panel_attributes>
     <additional_attributes>10.0;40.0;480.0;40.0;480.0;10.0;550.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>56</x>
+      <y>294</y>
+      <w>147</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0;10.0;300.0;110.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>273</y>
+      <w>56</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0;10.0;300.0;30.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>273</y>
+      <w>98</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0;120.0;320.0;70.0;320.0</additional_attributes>
   </element>
 </diagram>
