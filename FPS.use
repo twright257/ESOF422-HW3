@@ -1,0 +1,192 @@
+--fps with statemachine
+
+model FPS
+/*
+ * State pattern interface
+ */
+abstract class FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+	end
+	
+
+/*
+ *State classes
+ */
+class Neutral < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+			if (p.defeatable = true) then
+				self.player.fpsState := self.player.attackState 
+			else
+				self.player.fpsState := self.player.panicState
+			end; 
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+end
+
+class Attack < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+			self.player.fpsState := self.player.neutralState; 
+		end
+		
+		receiveBlow()
+		begin
+			self.player.health := self.player.health - 50; 
+			if (self.player.health <= 0) then 
+				self.player.fpsState := self.player.dieState;
+			end; 
+		end
+end
+
+class Die < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+		end
+		
+		receiveBlow()
+		begin
+		end
+end
+
+class Panic < FPSState
+	operations
+		seeOpponent(p : Player)
+		begin
+		end
+		
+		lostOpponent()
+		begin
+			self.player.fpsState := self.player.neutralState; 
+		end
+		
+		receiveBlow()
+		begin
+			self.player.health := self.player.health - 50; 
+			if (self.player.health <= 0) then 
+				self.player.fpsState := self.player.dieState;
+			end;
+		end
+end
+
+/*
+ * class for fps player
+ */
+class Player
+	attributes
+		health : Integer init : 100
+		defeatable : Boolean 
+		fpsState : FPSState
+		neutralState : FPSState
+		attackState : FPSState
+		panicState : FPSState
+		dieState : FPSState
+	
+	operations
+		initInstance()
+		begin
+			self.neutralState := new Neutral; 
+			self.attackState := new Attack;
+			self.panicState := new Panic;
+			self.dieState := new Die;
+			self.fpsState := self.neutralState; 
+			insert (self.neutralState, self) into playerState; 
+			insert (self.attackState, self) into playerState; 
+			insert (self.panicState, self) into playerState; 
+			insert (self.dieState, self) into playerState; 
+		end
+		
+		seeOpponent(p : Player)
+		begin
+			self.fpsState.seeOpponent(p); 
+		end
+		
+		lostOpponent()
+		begin
+			self.fpsState.lostOpponent(); 
+		end
+		
+		receiveBlow()
+		begin
+			self.fpsState.receiveBlow(); 
+		end
+		
+		
+/*
+ * States not compiling yet!!!!!!!!
+ */		
+		
+	statemachines
+		psm StatePattern
+			states
+				startUp:initial
+				Panic	[fpsState = panicState]
+				Neutral	[fpsState = neutralState]
+				Attack	[fpsState = attackState]
+				Die		[fpsState = dieState]
+			transitions
+				startUp -> Neutral {create}
+				Neutral -> Attack { [p.defeatable = true and fpsState = neutralState] seeOpponent() }
+				Neutral -> Panic { [p.defeatable = false and fpsState = neutralState] seeOpponent() }
+				Attack -> Neutral { [fpsState = attackState] lostOpponent() }
+				Attack -> Die { [health <= 50 and fpsState = attackState] receiveBlow() }
+				Attack -> Attack { [health > 50 and fpsState = attackState] receiveBlow() }
+				Panic -> Neutral { [fpsState = panicState] lostOpponent() }
+				Panic -> Die { [health <= 50 and fpsState = panicState] receiveBlow() }
+				Panic -> Panic { [health > 50 and fpsState = panicState] receiveBlow() }
+		end
+		
+		psm Usage
+			states
+				startUp:initial
+				Neutral
+				Attack
+				Panic
+				Die [health <= 0]
+			transitions
+				startUp -> Neutral {create} 
+				Neutral -> Attack { [p.defeatable = true] seeOpponent() }
+				Neutral -> Panic { [p.defeatable = false] seeOpponent() }
+				Attack -> Neutral {lostOpponent()}
+				Attack -> Die { [health <= 50] receiveBlow() }
+				Attack -> Attack { [health > 50] receiveBlow() }
+				Panic -> Neutral {lostOpponent()}
+				Panic -> Die { [health <= 50] receiveBlow() }
+				Panic -> Panic { [health > 50] receiveBlow() }
+		end
+end
+
+--associations
+association playerState between
+	FPSState[1]
+	Player[1]
+end
